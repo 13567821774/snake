@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>贪吃蛇</title>
+    <style>
+      #map {
+        position: relative;
+        width: 400px;
+        height: 400px;
+        background-color: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <span>分数</span>
+    <h1>0</h1>
+    <div id="map"></div>
+    <button id="begin">开始游戏</button>
+    <button id="reset">重新开始</button>
+    <script type="module">
+      import Game from './src/game.js';
+      let map = document.querySelector('#map');
+      let game = new Game(map, 10);
+      document.querySelector('#begin').onclick = () => {
+        game.start();
+      };
+      document.querySelector('#reset').onclick = () => {
+        game.reset();
+      };
+    </script>
+  </body>
+</html>
